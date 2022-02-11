@@ -1,6 +1,7 @@
 import React from 'react'
-import Header from '../components/Header/Header'
-import { LandingContainer } from '../components/PageStyles/Landing.styles'
+import Button from '../components/button/Button'
+import Header from '../components/header/Header'
+import { LandingContainer } from '../components/pageStyles/Landing.styles'
 
 const Landing = () => {
   return (

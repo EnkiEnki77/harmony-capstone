@@ -1,14 +1,20 @@
 import React from 'react'
 import { HeaderContainer } from './Header.styles'
-import { Logout } from '../Header/Header.styles'
-import Logo from '../Logo/Logo'
-import ZipSearch from '../ZipSearch/ZipSearch'
+import { Logout } from './Header.styles'
+import Logo from '../logo/Logo'
+import ZipSearch from '../zipSearch/ZipSearch'
+import { MessageIcon, MessagesLink } from '../pageStyles/Messages.styles'
+
 
 const Header = (props) => {
   return (
     <HeaderContainer>
-        <Logo/>
-        {props.dash && [<ZipSearch/>, <Logout to='/'>Logout</Logout>]}
+        <Logo messages = {props.messages}/>
+
+        {props.dash && [<ZipSearch/>,
+        <MessagesLink to='/messages'><MessageIcon/></MessagesLink>, 
+        <Logout to='/'>Logout</Logout>]}
+
         {props.onboard && <Logout to='/'>Logout</Logout>}
     </HeaderContainer>
   )

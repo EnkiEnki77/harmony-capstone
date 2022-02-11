@@ -1,11 +1,17 @@
 import React from 'react'
-import { AppName, LogoContainer, LogoIcon } from './Logo.styles'
+import { AppName, HomeLink, LogoContainer, LogoIcon } from './Logo.styles'
 
-const Logo = () => {
+const Logo = (props) => {
   return (
     <LogoContainer>
-        <LogoIcon/>
-        <AppName>Harmony</AppName>
+        
+        {props.messages ? 
+        [<HomeLink to='/dashboard'>
+            <LogoIcon/>
+            <AppName>Harmony</AppName>
+        </HomeLink>]
+        : [<LogoIcon/>,
+        <AppName>Harmony</AppName>]}
     </LogoContainer>
   )
 }
