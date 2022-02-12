@@ -7,6 +7,7 @@ const Landing = () => {
   return (
     <LandingContainer>
       <Header/>
+      <Button text = 'Sign In with Spotify' buttonAlt = {true}/>
     </LandingContainer>
   )
 }

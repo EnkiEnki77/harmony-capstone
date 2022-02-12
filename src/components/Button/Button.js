@@ -4,7 +4,7 @@ import { StyledButton } from './Button.styles'
 const Button = (props) => {
   return (
     <>
-      <StyledButton button = {props.button}>{props.text}</StyledButton>
+      <StyledButton buttonAlt = {props.buttonAlt} buttonAltW = {props.buttonAltW} margin= {props.margin} buttonAltH = {props.buttonAltH}>{props.text}</StyledButton>
     </>
   )
 }
