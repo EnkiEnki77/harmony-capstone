@@ -3,7 +3,7 @@ import {FiSearch} from 'react-icons/fi';
 
 export const SearchContainer  = styled.div`
   width: ${props => props.onboard ? '423px' : '214px'} ;
-  height: ${props => props.onboard ? '84px' : '48px'}  ;
+  height: ${props => props.onboard ? '80px' : '48px'}  ;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: ${props => props.onboard ? '50px' : '30px'} ;
   padding: 12px 24px 12px 24px;

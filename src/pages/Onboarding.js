@@ -16,7 +16,6 @@ const Onboarding = () => {
         <OnboardMessage>Before we can bring you face to face with your favorite artists, we’re going to need to know your location</OnboardMessage>
         <ZipSearch onboard ={true}/>
       </OnboardContent>
-      
     </OnboardingContainer>
   )
 }
