@@ -4,8 +4,18 @@ import { OnboardBackground, Overlay, OnboardContent, OnboardHeader, OnboardingCo
 import ZipSearch from '../components/zipSearch/ZipSearch'
 import OnboardImg from '../images/unsplash_2rxgWHby5mo.png'
 import overlayImg from '../images/Gradient.png'
+import { useEffect } from 'react'
+import { useState } from 'react'
 
 const Onboarding = () => {
+  const [token, setToken] = useState('')
+
+  // useEffect(() => {
+  //   fetch('/callback')
+  //   .then(res => res.json())
+  //   .then(json => console.log(json))
+  // }, [])
+
   return (
     <OnboardingContainer>
       <Header onboard={true}/>

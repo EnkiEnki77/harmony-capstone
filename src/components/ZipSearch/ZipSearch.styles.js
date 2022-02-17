@@ -34,12 +34,12 @@ text-align: start;
 background-color: transparent;
 outline: none;
 letter-spacing: 0.02em;
-color: ${props => props.onboard ? '#000000' : '#000000'};
-caret-color: ${props => props.onboard ? '#000000' : '#000000'};
+color: ${props => props.onboard ? '#000000' : '#FFFFFF'};
+caret-color: ${props => props.onboard ? '#000000' : '#FFFFFF'};
 
 &::placeholder{
-  font-size: 18px;
+  font-size: ${props => props.onboard ? '18px' : '16px'};
   font-weight: 500;
-  color: ${props => props.onboard ? '#000000' : '#000000'};
+  color: ${props => props.onboard ? '#000000' : '#FFFFFF'};
 }
 `;

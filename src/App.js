@@ -8,6 +8,16 @@ import Onboarding from "./pages/Onboarding";
 
 
 function App() {
+  const [data, setData] = React.useState('')
+
+    // React.useEffect(() => {
+    //     fetch('/api')
+    //     .then((res) => res.json())
+    //     .then(json => console.log(json))
+    // }, [])
+
+
+
   return (
     <div className="App">
         <GlobalStyle/>
@@ -15,7 +25,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Landing/>}/>
             <Route path="/onboarding" element={<Onboarding/>}/>
-            <Route path="/dashboard" element={<Dashboard/>}/>
+            <Route path="/callback" element={<Dashboard/>}/>
             <Route path="/messages" element={<Messages/>}/>
           </Routes>
         </Router>

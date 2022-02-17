@@ -12,4 +12,8 @@ export const GlobalStyle = createGlobalStyle`
    padding: 0;
    width: 100%;
   }
+
+  a{
+    text-decoration: none;
+  }
 `;
