@@ -1,13 +1,13 @@
-import React from 'react'
-import Header from '../components/header/Header'
-import { MessagesContainer } from '../components/pageStyles/Messages.styles'
+import React from "react";
+import Header from "../components/Header/Header";
+import { MessagesContainer } from "../components/PageStyles/Messages.styles";
 
 const Messages = () => {
   return (
     <MessagesContainer>
-        <Header messages = {true} onboard = {true}/>
+      <Header messages={true} onboard={true} />
     </MessagesContainer>
-  )
-}
+  );
+};
 
-export default Messages
+export default Messages;

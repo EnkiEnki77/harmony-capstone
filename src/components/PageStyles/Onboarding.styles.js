@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-export const OnboardingContainer  = styled.div`
-   display: flex;
+export const OnboardingContainer = styled.div`
+  display: flex;
   flex-flow: column;
   align-items: center;
   width: 100%;
@@ -21,7 +21,7 @@ export const Overlay = styled.div`
   height: 100%;
   position: absolute;
   background-color: black;
-  background: url(${props => props.overlay}) no-repeat center center fixed; 
+  background: url(${(props) => props.overlay}) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -29,28 +29,26 @@ export const Overlay = styled.div`
   opacity: 0.8;
 `;
 
-export const OnboardContent  = styled.div`
+export const OnboardContent = styled.div`
   padding-top: 110px;
   display: flex;
   flex-flow: column;
   align-items: center;
   gap: 10% 10%;
-  
 `;
 
-export const OnboardHeader  = styled.h1`
+export const OnboardHeader = styled.h1`
   font-size: 60px;
-  color: #FFFFFF;
+  color: #ffffff;
   margin-bottom: 16px;
- 
 `;
 
-export const OnboardMessage  = styled.p`
+export const OnboardMessage = styled.p`
   width: 590px;
   text-align: center;
   font-size: 18px;
   margin-bottom: 48px;
   margin-top: 0;
-  color: #FFFFFF;
+  color: #ffffff;
   opacity: 0.8;
 `;

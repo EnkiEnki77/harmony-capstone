@@ -1,23 +1,26 @@
-import React from 'react'
-import { HeaderContainer } from './Header.styles'
-import { Logout } from './Header.styles'
-import Logo from '../logo/Logo'
-import ZipSearch from '../zipSearch/ZipSearch'
-import { MessageIcon, MessagesLink } from '../pageStyles/Messages.styles'
-
+import React from "react";
+import { HeaderContainer } from "./Header.styles.js";
+import { Logout } from "./Header.styles.js";
+import Logo from "../Logo/Logo.js";
+import ZipSearch from "../ZipSearch/ZipSearch.js";
+import { MessageIcon, MessagesLink } from "../PageStyles/Messages.styles.js";
 
 const Header = (props) => {
   return (
     <HeaderContainer>
-        <Logo messages = {props.messages}/>
+      <Logo messages={props.messages} />
 
-        {props.dash && [<ZipSearch/>,
-        <MessagesLink to='/messages'><MessageIcon/></MessagesLink>, 
-        <Logout to='/'>Logout</Logout>]}
+      {props.dash && [
+        <ZipSearch />,
+        <MessagesLink to="/messages">
+          <MessageIcon />
+        </MessagesLink>,
+        <Logout to="/">Logout</Logout>,
+      ]}
 
-        {props.onboard && <Logout to='/'>Logout</Logout>}
+      {props.onboard && <Logout to="/">Logout</Logout>}
     </HeaderContainer>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
