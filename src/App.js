@@ -25,7 +25,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Landing/>}/>
             <Route path="/onboarding" element={<Onboarding/>}/>
-            <Route path="/callback" element={<Dashboard/>}/>
+            <Route path="/dashboard" element={<Dashboard/>}/>
             <Route path="/messages" element={<Messages/>}/>
           </Routes>
         </Router>

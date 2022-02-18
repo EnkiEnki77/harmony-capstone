@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import {FiSearch} from 'react-icons/fi';
 
-export const SearchContainer  = styled.div`
+export const SearchContainer  = styled.form`
   width: ${props => props.onboard ? '423px' : '214px'} ;
   height: ${props => props.onboard ? '80px' : '48px'}  ;
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -42,4 +42,15 @@ caret-color: ${props => props.onboard ? '#000000' : '#FFFFFF'};
   font-weight: 500;
   color: ${props => props.onboard ? '#000000' : '#FFFFFF'};
 }
+`;
+
+export const UserEmail = styled.input`
+  display: none;
+`;
+
+export const UserImage = styled.input`
+  display: none;
+`;
+export const UserToken = styled.input`
+  display: none;
 `;
