@@ -7,9 +7,14 @@ import queryString from 'query-string'
 
 const Dashboard = () => {
 
-  const [topArtists, setTopArtists] = useState([])
+  const [topArtists, setTopArtists] = useState('')
+  const [artistEvents, setArtistEvents] = useState('')
   let parsed = queryString.parse(window.location.search)
   let accessToken = parsed.access_token
+  const ticketmasterURI = 'https://app.ticketmaster.com/discovery/v2/events.json?apikey='
+  const apiKey = 	'TnZ0TAmAIg23wmcPtZkvFbppZpp2dMxr'
+  const apiSecret = 'gDy8WDgwDxA5hGD0'
+  const artists = topArtists.items
   console.log(accessToken)
 
   useEffect(() => {
@@ -22,7 +27,28 @@ const Dashboard = () => {
     })()
   }, [accessToken])
 
-  
+  useEffect(() => {
+    let nearMe = ''
+    if(artists){ nearMe = Promise.all(
+      artists.map(async (artist) => {
+        const response = await fetch(ticketmasterURI + apiKey + '&keyword=' + artist.name )
+       return  await response.json()
+      })
+    )
+ 
+  }
+
+  console.log(nearMe)
+
+    
+
+    return
+
+    
+   
+   }, [])
+
+//  console.log(artistEvents)
 
   return (
     <DashboardContainer>
