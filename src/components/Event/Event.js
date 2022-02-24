@@ -11,15 +11,17 @@ import {
   ArtInfo,
   Artist,
   Location,
+  DownArrow,
 } from "./Event.styles";
+import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 
 const Event = (props) => {
   return (
     <>
       <EventContainer>
         <EventItem>
+          <DownArrow icon={faAngleDown} />
           <ArtistImage src={props.artistImage} alt="Artist Image" />
-
           <DateTime>
             <Date>{props.date}</Date>
             <Day>{props.day} • </Day>
@@ -29,14 +31,14 @@ const Event = (props) => {
             <Artist>{props.artist}</Artist>
             <Location>{props.location}</Location>
           </ArtInfo>
-          <Button
-            hover={true}
-            land={false}
-            text="See Tickets"
-            buttonAltW="134px"
-            buttonAltH="41px"
-          />
         </EventItem>
+        <Button
+          hover={true}
+          land={false}
+          text="See Tickets"
+          buttonAltW="134px"
+          buttonAltH="41px"
+        />
       </EventContainer>
     </>
   );

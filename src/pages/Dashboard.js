@@ -14,6 +14,7 @@ import {
 import Event from "../components/Event/Event";
 import overlayImg from "../images/Gradient.png";
 import DashImg from "../images/austin-neill-hgO1wFPXl3I-unsplash.jpg";
+import { ConcertGoer } from "../components/ConcertGoer/ConcertGoer";
 
 const spotifyData = [
   {
@@ -26,7 +27,7 @@ const spotifyData = [
   },
   {
     artistImage: DashImg,
-    date: "Nov 12",
+    date: "Nov 13",
     day: "Friday",
     time: "8:00PM",
     artist: "Kendrick Lamar",
@@ -34,7 +35,7 @@ const spotifyData = [
   },
   {
     artistImage: DashImg,
-    date: "Nov 12",
+    date: "Nov 14",
     day: "Friday",
     time: "8:00PM",
     artist: "Kendrick Lamar",
@@ -51,7 +52,9 @@ const Dashboard = () => {
         <DashBanner>
           <DashboardOverlay overlay={overlayImg} />
           <DashboardBackground src={DashImg} alt="Onboarding background" />
-          <DashTopline>Friday Dec 12, 2022</DashTopline>
+          <DashTopline>
+            {spotifyData[0].day}, &nbsp;{spotifyData[0].date}
+          </DashTopline>
           <DashMainline>Kendrick Lamar</DashMainline>
           <DashSubline>
             Sunshine Theater - Albuquerque, NM
@@ -67,6 +70,7 @@ const Dashboard = () => {
         <UserLocation>
           All Concert Events Near <span>87109</span> ({spotifyData.length})
         </UserLocation>
+
         {spotifyData.map((item) => {
           return (
             <Event
@@ -79,6 +83,7 @@ const Dashboard = () => {
             />
           );
         })}
+        {/* <ConcertGoer /> */}
       </DashboardContainer>
     </>
   );

@@ -86,9 +86,9 @@ export const DashSubline = styled.h6`
 `;
 
 export const UserLocation = styled.h4`
-  width: 371px;
+  width: 30%;
   height: 30px;
-  margin-left: 100px;
+  margin-left: 50px;
   margin-top: 50px;
 
   span {
