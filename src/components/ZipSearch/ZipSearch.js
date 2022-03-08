@@ -5,6 +5,7 @@ import { SearchContainer, SearchIcon, SearchInput, UserEmail, UserImage, UserTok
 
 const ZipSearch = (props) => {
   console.log(props.accessToken)
+ 
   return (
     
     <>
@@ -14,7 +15,7 @@ const ZipSearch = (props) => {
             {props.onboard &&  
            [<UserEmail type = 'email' name='email' value={props.email}/>,
            <UserToken type = 'text' name='token' value={props.accessToken}/>,
-            <UserImage type = 'text' name='profilePhoto' value = {props.image}  />,
+            // <UserImage type = 'text' name='profilePhoto' value = {props.image}  />,
             <Button type = "submit" text = "Get Started" margin = '30px' buttonAltW = '3000px' buttonAltH = '52px' hover = {true} buttonAlt ={true} buttonAlt2 ='white'/>]}
         </SearchContainer>
     </>

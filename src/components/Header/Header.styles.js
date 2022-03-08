@@ -11,6 +11,7 @@ export const HeaderContainer = styled.header`
   justify-content: space-between;
   padding: 0 8%;
   gap: 2%;
+  z-index: 20;
 `;
 
 export const Logout = styled(Link)`

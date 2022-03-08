@@ -18,6 +18,7 @@ justify-content: center ;
 gap: 2%;
 font-size: 16px;
 font-weight: 700;
+z-index: 15 ;
 
 &:hover{
     cursor: pointer;

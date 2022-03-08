@@ -29,7 +29,7 @@ const [login, setLogin] = useState('')
       <LandingContent>
         <LandingHeader>See your favorite artists in concert</LandingHeader>
         <LandingMessage>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tellus leo lectus mauris accumsan turpis.</LandingMessage>
-        <a href='http://localhost:3001/login'>
+        <a href='onboarding'>
           <Button  hover = {true} land = {true} text = 'Sign In with Spotify'  buttonAltW = '242px' buttonAltH = '52px'/>
         </a>
       </LandingContent>

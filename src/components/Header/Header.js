@@ -12,7 +12,6 @@ const Header = (props) => {
         <Logo messages = {props.messages}/>
 
         {props.dash && [<ZipSearch/>,
-        <MessagesLink to='/messages'><MessageIcon/></MessagesLink>, 
         <Logout to='/'>Logout</Logout>]}
 
         {props.onboard && <Logout to='/'>Logout</Logout>}

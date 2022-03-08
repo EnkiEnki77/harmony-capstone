@@ -9,7 +9,7 @@ import { useState } from 'react'
 import queryString from 'query-string'
 
 const Onboarding = () => {
-  const [user, setUser] = useState('')
+  const [user, setUser] = useState([])
   let parsed = queryString.parse(window.location.search)
   let accessToken = parsed.access_token
   console.log(accessToken)
@@ -24,8 +24,6 @@ const Onboarding = () => {
     })()
   }, [accessToken])
 
-  // console.log(user.images[0].url)
-
   return (
     <OnboardingContainer>
       <Header onboard={true}/>
@@ -34,7 +32,7 @@ const Onboarding = () => {
       <OnboardContent>
         <OnboardHeader>Almost there...</OnboardHeader>
         <OnboardMessage>Before we can bring you face to face with your favorite artists, we’re going to need to know your location</OnboardMessage>
-        {user && <ZipSearch accessToken = {accessToken} image = {user.images[0].url}  email = {user.email} onboard ={true}/>}
+         {user && <ZipSearch accessToken = {accessToken} image = {user.images}  email = {user.email} onboard ={true}/>}
       </OnboardContent>
     </OnboardingContainer>
   )

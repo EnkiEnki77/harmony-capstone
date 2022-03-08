@@ -1,130 +1,116 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
+import { motion } from "framer-motion"
 
-export const EventContainer = styled.div`
-  width: 70%;
-  height: 60px;
-  margin-top: 15px;
-  margin-left: 5px;
-  margin-bottom: 10px;
+export const EventContainer = styled(motion.div)`
+  width: 57%;
+  min-height: 84px;
+  padding-right: 10px ;
+
+  padding-bottom:${props => props.toggle ? '24px' : 'none'} ;
+ 
 
   /* background-color: green; */
   display: flex;
-  justify-content: left;
-  align-items: flex-start;
-  padding-right: 40px;
+  flex-flow: row wrap ;
+ align-items: center;
+ gap:0 16px  ;
+ box-shadow: ${props => props.toggle ? '0px 8px 20px 0px rgba(0,0,0,0.7)' : 'none'} ;
+  transition: all 0.5s ;
+  border-radius: ${props => props.toggle ? '10px' : 'none'};
 
-  &:hover {
-    background: #fafafa;
+  button {
+    margin-right: 0px ;
   }
 `;
 
 export const EventItem = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: left;
-  margin-top: -50px;
+    width: 80.5% ;
+    min-height: 84px;
+    display: flex;
+    align-items: center;
+    border-radius: ${props => props.toggle ? '10px' : 'none'};
+    transition: all 0.5s;
+    /* gap:3% ; */
 
-  /* background-color: blue; */
-
-  button {
-    margin-top: 10px;
+    &:hover {
+    background: #fafafa;
+    cursor: pointer;
+    border-radius: ${props => props.toggle ? '10px' : 'none'};
   }
 `;
 
 export const ArtistImage = styled.img`
   width: 60px;
   height: 60px;
-  /* margin-left: 10px; */
-  margin-top: 50px;
+  margin-right:2rem ;
+  border:1px solid black;
   border-radius: 50px;
 `;
 
 export const DateTime = styled.div`
+  margin-right: 5rem ;
   display: flex;
-  flex-flow: row wrap;
-  align-items: flex-end;
-  height: 100%;
+  flex-flow: column; ;
+  gap:8px ;
 `;
 
 export const Date = styled.h2`
-  width: 60px;
-  height: 20px;
-  margin-left: 23px;
-  margin-top: 55px;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 20px;
-  text-align: center;
-  letter-spacing: 0.02em;
-  color: #2d9cdb;
+margin:0 ;
+font-size: 16px;
+font-weight:600;
 `;
 
-export const Day = styled.div`
-  height: 17px;
-  margin-right: 5px;
-  margin-left: -58px;
-  padding-top: 10px;
-  font-size: 14px;
-  line-height: 17px;
-  text-align: center;
-  letter-spacing: 0.02em;
-  color: #243037;
-  opacity: 0.6;
-`;
-
-export const Time = styled.div`
-  height: 17px;
-  padding-top: 10px;
-  font-size: 14px;
-  line-height: 17px;
-  text-align: center;
-  letter-spacing: 0.02em;
-  color: #243037;
-  opacity: 0.6;
+export const DayTime = styled.p`
+margin:0 ;
+font-size:14px;
+font-weight:500 ;
 `;
 
 export const ArtInfo = styled.div`
-  height: 100%;
-
-  margin-left: 20px;
-  margin-top: 35px;
+  display: flex;
+  flex-flow: column; ;
+  gap:8px ;
 `;
 
 export const Artist = styled.h2`
-  font-weight: 600;
+  margin:0 ;
   font-size: 16px;
-  line-height: 20px;
-  /* identical to box height */
-
-  text-align: left;
-  letter-spacing: 0.02em;
-
-  /* txt-color */
-
-  color: #243037;
+font-weight:600;
 `;
 
 export const Location = styled.p`
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 17px;
-  /* identical to box height */
-
-  text-align: center;
-  letter-spacing: 0.02em;
-
-  /* txt-color */
-
-  color: #243037;
-
-  opacity: 0.6;
+margin:0 ;
+font-size:14px;
+font-weight:500 ;
 `;
 
 export const DownArrow = styled(FontAwesomeIcon)`
-  margin-top: 70px;
-  padding-left: 10px;
-  padding-right: 20px;
+  margin:0 1rem;
+  transform: ${props => props.toggle ? 'rotate(-180deg)' : 'none'};
+  transition: all 0.5s;
+  font-size: 18px;
+`;
+
+export const Lineup = styled(motion.div)`
+  flex-basis: 100% ;
+  padding-left: 48px ;
+  display:flex ;
+  flex-flow: column; 
+  gap:0 8px ;
+
+
+  .something {
+    margin:none ;
+  }
+`;
+
+export const LineupText = styled.h2`
+  font-family: Montserrat;
+font-size: 14px;
+font-style: normal;
+font-weight: 600;
+line-height: 17px;
+letter-spacing: 0.02em;
+margin-bottom: 16px
 `;
