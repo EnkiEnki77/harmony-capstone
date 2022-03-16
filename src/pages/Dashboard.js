@@ -50,17 +50,7 @@ const Dashboard = () => {
     fetchArtists();
   }, [])
 
-  var date = new Date("2022-04-29T24:00:00Z");
-  let datetime = date.toString() // "Wed Jun 29 2011 09:52:48 GMT-0700 (PDT)"
-
-  var stringArray = datetime.split(/\b(\s)/);
-
-  let uniqueChars = [];
-  stringArray.forEach((element) => {
-    if (element !== ' ') {
-        uniqueChars.push(element);
-    }
-  });
+  
 
   if(artistEvents){
     for(let i = 0; i < 5; i++){
@@ -80,8 +70,20 @@ const Dashboard = () => {
     
   }
 
+  // var date = new Date(events2[0]._embedded.events[0].dates.start.dateTime);
+  // let datetime = date.toString() // "Wed Jun 29 2011 09:52:48 GMT-0700 (PDT)"
 
-  console.log(eventsWithVenues)
+  // var stringArray = datetime.split(/\b(\s)/);
+
+  // let uniqueCharsHero = [];
+  // stringArray.forEach((element) => {
+  //   if (element !== ' ') {
+  //       uniqueCharsHero.push(element);
+  //   }
+  // });
+
+
+  // console.log(uniqueCharsHero)
 
   return (
     <DashboardContainer>
@@ -90,14 +92,14 @@ const Dashboard = () => {
         <DashboardOverlay src={LandingOverlayImg}></DashboardOverlay>
         <DashboardBackground src={artistEvents && events2[0][0].images[0].url}></DashboardBackground>
         <HeroInfoCont>
-          <HeroDate>{artistEvents && artistList[0].date}</HeroDate>
+          <HeroDate>Monday, Apr 18</HeroDate>
           <HeroArtist>{artistEvents && events2[0][0].name}</HeroArtist>
           <HeroVenue>{artistEvents && events2[0][3]._embedded.venues[0].name}</HeroVenue>
           <a href={artistEvents && events2[0][3].url}><Button  text='See Tickets'/></a>
         </HeroInfoCont>
       </HeroContainer>,
       <EventContainer>
-        <ConcertCount>All Concert Events Near 97322 (12)</ConcertCount>
+        <ConcertCount>All Concert Events Near <span>97322</span> ({events2.length})</ConcertCount>
         {artistEvents && artistEvents.map((event) => {
           let events = [];
           let venue = '';
@@ -112,8 +114,20 @@ const Dashboard = () => {
               venue = events[i]._embedded.events[3]._embedded.venues[0].name
             }
 
+            var date = new Date(events[i]._embedded.events[0].dates.start.dateTime);
+            let datetime = date.toString() // "Wed Jun 29 2011 09:52:48 GMT-0700 (PDT)"
+
+            var stringArray = datetime.split(/\b(\s)/);
+
+            let uniqueChars = [];
+            stringArray.forEach((element) => {
+              if (element !== ' ') {
+                  uniqueChars.push(element);
+              }
+            });
+
             console.log()
-            return <Event href={events[i]._embedded.events[0].url} datetime = {uniqueChars} artistImage={events[i]._embedded.events[0].images[0].url} artist={events[i]._embedded.events[0].name} venue = {events[i]._embedded.events[3]._embedded.venues[0].name} />
+            return <Event lineup={events[i]._embedded.events[0]._embedded.attractions} href={events[i]._embedded.events[0].url} datetime = {uniqueChars} artistImage={events[i]._embedded.events[0].images[0].url} artist={events[i]._embedded.events[0].name} venue = {events[i]._embedded.events[3]._embedded.venues[0].name} />
           }
          })
         }

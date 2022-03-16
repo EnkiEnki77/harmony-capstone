@@ -95,11 +95,10 @@ let time = convert(props.datetime[4])
             exit='closed'
             transition={{duration: 0.5, times: [0, 0.5, 0.7, 1]}}>
               <LineupText>Lineup</LineupText>
-              <LineupArtists/>
-              <LineupArtists/>
-              <LineupArtists/>
-              <LineupArtists/>
-              <LineupArtists/>
+              {props.lineup.map((lineup) => {
+                return <LineupArtists name={lineup.name} image={lineup.images[0].url}/>
+              })}
+
             </Lineup>
           }</AnimatePresence>
       </EventContainer>

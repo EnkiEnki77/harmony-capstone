@@ -90,6 +90,11 @@ export const EventHead = styled.div`
 export const ConcertCount  = styled.h2`
   margin-bottom:16px ;
   margin-left: 1rem;
+
+  span{
+    color:#1DB954;
+    text-decoration: underline;
+  }
 `;
 
 export const DateSort  = styled.select`
