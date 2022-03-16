@@ -12,6 +12,7 @@ import heroImg from '../images/unsplash_hgO1wFPXl3I.png'
 import LandingOverlayImg from '../images/Gradient.png'
 import Footer from '../components/footer/Footer'
 import LoadingPage from './LoadingPage'
+import { AnimatePresence } from 'framer-motion'
 
 const Dashboard = () => {
 
@@ -79,7 +80,7 @@ const Dashboard = () => {
     
   }
 
-  console.log(artistEvents)
+
   console.log(eventsWithVenues)
 
   return (
@@ -92,7 +93,7 @@ const Dashboard = () => {
           <HeroDate>{artistEvents && artistList[0].date}</HeroDate>
           <HeroArtist>{artistEvents && events2[0][0].name}</HeroArtist>
           <HeroVenue>{artistEvents && events2[0][3]._embedded.venues[0].name}</HeroVenue>
-          <Button text='See Tickets'/>
+          <a href={artistEvents && events2[0][3].url}><Button  text='See Tickets'/></a>
         </HeroInfoCont>
       </HeroContainer>,
       <EventContainer>
@@ -110,13 +111,15 @@ const Dashboard = () => {
             if(events[i]._embedded.events[3]._embedded.venues[0].name){
               venue = events[i]._embedded.events[3]._embedded.venues[0].name
             }
-            return <Event datetime = {uniqueChars} artistImage={events[i]._embedded.events[0].images[0].url} artist={events[i]._embedded.events[0].name} venue = {events[i]._embedded.events[3]._embedded.venues[0].name} />
+
+            console.log()
+            return <Event href={events[i]._embedded.events[0].url} datetime = {uniqueChars} artistImage={events[i]._embedded.events[0].images[0].url} artist={events[i]._embedded.events[0].name} venue = {events[i]._embedded.events[3]._embedded.venues[0].name} />
           }
          })
         }
       </EventContainer>,
       <Footer/>]
-      : <LoadingPage/>}
+      : <LoadingPage />}
     </DashboardContainer>
   )
 }

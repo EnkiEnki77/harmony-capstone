@@ -24,6 +24,7 @@ line-height: 36px;
 /* identical to box height, or 225% */
 
 letter-spacing: 0.02em;
+margin-top: 10px;
 
 color: #1DB954;
 caret-color: transparent;

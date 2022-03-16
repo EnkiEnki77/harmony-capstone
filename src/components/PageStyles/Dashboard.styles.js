@@ -34,6 +34,11 @@ export const HeroInfoCont = styled.div`
   width: 100%;
   padding: 0 0 68px 8%;
   z-index: 13 ;
+
+  a{
+    width: 0px;
+    height: 100%;
+  }
 `;
 
 export const HeroDate  = styled.p`
@@ -74,7 +79,7 @@ export const HeroVenue  = styled.h3`
 
 export const EventContainer = styled.div`
   width: calc(100% - 6rem);
-  margin: 68px 0 30px 6rem ;
+  margin: 68px 0 100px 6rem ;
   
 `;
 

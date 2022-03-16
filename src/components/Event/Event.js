@@ -76,13 +76,15 @@ let time = convert(props.datetime[4])
             <Location>{props.venue}</Location>
           </ArtInfo>
         </EventItem>
-        <Button
-          hover={true}
-          land={false}
-          text="See Tickets"
-          buttonAltW="134px"
-          buttonAltH="41px"
-        />
+        <a href={props.href} target="_blank" rel="noreferrer">
+          <Button
+            hover={true}
+            land={false}
+            text="See Tickets"
+            buttonAltW="134px"
+            buttonAltH="41px"
+          />
+        </a>
          <AnimatePresence>
         {toggle && 
             <Lineup   
