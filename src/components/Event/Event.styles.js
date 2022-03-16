@@ -7,6 +7,8 @@ export const EventContainer = styled(motion.div)`
   min-height: 84px;
   padding-right: 10px ;
 
+  margin-bottom: 20px;
+
   padding-bottom:${props => props.toggle ? '24px' : 'none'} ;
  
 
@@ -48,7 +50,7 @@ export const ArtistImage = styled.img`
   border-radius: 50px;
 `;
 
-export const DateTime = styled.div`
+export const DateTimes = styled.div`
   margin-right: 5rem ;
   display: flex;
   flex-flow: column; ;

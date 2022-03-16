@@ -8,14 +8,6 @@ import Onboarding from "./pages/Onboarding";
 
 
 function App() {
-  const [data, setData] = React.useState('')
-
-    // React.useEffect(() => {
-    //     fetch('/api')
-    //     .then((res) => res.json())
-    //     .then(json => console.log(json))
-    // }, [])
-
 
 
   return (

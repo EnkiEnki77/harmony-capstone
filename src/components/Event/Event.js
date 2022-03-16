@@ -9,7 +9,7 @@ import {
   Day,
   Time,
   LineupText,
-  DateTime,
+  DateTimes,
   ArtInfo,
   Artist,
   Location,
@@ -18,7 +18,8 @@ import {
   Lineup
 } from "./Event.styles";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
-import LineupArtists from "../LineupArtist/LineupArtists"
+import LineupArtists from "../LineupArtist/LineupArtists";
+import { DateTime }  from "luxon";
 
 
 
@@ -43,17 +44,33 @@ const Event = (props) => {
     
   }
 
-  console.log(toggle)
+  let ampm = ''
+    if(parseInt(props.datetime[4]) > 12 ){
+        ampm = 'PM'
+    }else if(parseInt(props.datetime[4]) < 12 ){
+      ampm = 'AM'
+    }
+
+  function convert(input) {
+    
+
+    console.log(ampm)
+    return DateTime.fromFormat(input, 'HH:mm:ss').toFormat(`h:mm `);
+}
+
+let time = convert(props.datetime[4])
+
+  console.log(parseInt(props.datetime[4]))
   return (
     <>
-      <EventContainer onMouseLeave={handleMouseLeave} toggle={toggle} >
+      <EventContainer  toggle={toggle} >
         <EventItem onClick={handleDropdown} toggle={toggle}>
           <DownArrow icon={faAngleDown} toggle={toggle}/>
           <ArtistImage src={props.artistImage} alt="Artist Image" />
-          <DateTime>
-            <Date>NOV 12</Date>
-            <DayTime>Friday • 8:00pm </DayTime>
-          </DateTime>
+          <DateTimes>
+            <Date>{props.datetime[1] + ' ' + props.datetime[2]}</Date>
+            <DayTime>{`${props.datetime[0]} • ${time}${ampm}`}</DayTime>
+          </DateTimes>
           <ArtInfo>
             <Artist>{props.artist}</Artist>
             <Location>{props.venue}</Location>
