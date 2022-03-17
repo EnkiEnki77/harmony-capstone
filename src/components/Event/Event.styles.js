@@ -114,5 +114,6 @@ font-style: normal;
 font-weight: 600;
 line-height: 17px;
 letter-spacing: 0.02em;
-margin-bottom: 16px
+margin-bottom: 16px;
+margin-top: 20px;
 `;
